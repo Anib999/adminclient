@@ -20,6 +20,7 @@ import { setMode } from "../state";
 const Navbar = () => {
   const dispatch = useDispatch();
   const theme = useTheme();
+  
   return (
     <AppBar
       sx={{
@@ -39,7 +40,7 @@ const Navbar = () => {
             <MenuIcon />
           </IconButton>
           <FlexBetween
-            // backgroundColor={theme.palette.background.alt}
+            bgcolor={theme.palette.background.alt}
             borderRadius={"9px"}
             gap={"3rem"}
             p="0.1rem 1.5rem"
