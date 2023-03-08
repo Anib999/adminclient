@@ -17,7 +17,13 @@ import { useDispatch } from "react-redux";
 import FlexBetween from "./FlexBetween";
 import { setMode } from "../state";
 
-const Navbar = () => {
+interface SidebarProps {
+  isSidebarOpen: boolean;
+  setIsSidebarOpen: Function;
+}
+
+const Navbar = (SidebarProps: SidebarProps) => {
+  const { isSidebarOpen, setIsSidebarOpen } = SidebarProps;
   const dispatch = useDispatch();
   const theme = useTheme();
   
@@ -36,7 +42,7 @@ const Navbar = () => {
       >
         {/* Left */}
         <FlexBetween>
-          <IconButton onClick={() => console.log("clicked")}>
+          <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             <MenuIcon />
           </IconButton>
           <FlexBetween
